@@ -4,19 +4,19 @@ import streamlit.components.v1 as components
 # Configuración inicial de la página
 st.set_page_config(page_title="MC-14 y MPDI", layout="wide")
 
-# Información del autor
+# Información del autor (Texto en blanco)
 st.markdown("""
 <div style='background-color: #2D2D2D; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-    <h2>👤 Autor</h2>
-    <p>漏 2025 <strong>Ibar Federico Anderson, Ph.D., Master, Industrial Designer</strong></p>
+    <h2 style='color: white;'>👤 Autor</h2>
+    <p style='color: white;'>© 2025 <strong>Ibar Federico Anderson, Ph.D., Master, Industrial Designer</strong></p>
     <div style='display: flex; justify-content: space-between; margin-top: 10px;'>
         <div>
-            <p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" style="height: 20px; vertical-align: middle;"> <a href="https://scholar.google.com/citations?user=mXD4RFUAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
-            <p><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" style="height: 20px; vertical-align: middle;"> <a href="https://orcid.org/0000-0002-9732-3660" target="_blank">ORCID</a></p>
+            <p style='color: white;'><img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" style="height: 20px; vertical-align: middle;"> <a href="https://scholar.google.com/citations?user=mXD4RFUAAAAJ&hl=en" target="_blank" style='color: white;'>Google Scholar</a></p>
+            <p style='color: white;'><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" style="height: 20px; vertical-align: middle;"> <a href="https://orcid.org/0000-0002-9732-3660" target="_blank" style='color: white;'>ORCID</a></p>
         </div>
         <div>
-            <p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" style="height: 20px; vertical-align: middle;"> <a href="https://www.researchgate.net/profile/Ibar-Anderson" target="_blank">Research Gate</a></p>
-            <p><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 20px; vertical-align: middle;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 20px; vertical-align: middle;"> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0 License</a></p>
+            <p style='color: white;'><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" style="height: 20px; vertical-align: middle;"> <a href="https://www.researchgate.net/profile/Ibar-Anderson" target="_blank" style='color: white;'>Research Gate</a></p>
+            <p style='color: white;'><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 20px; vertical-align: middle;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 20px; vertical-align: middle;"> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style='color: white;'>CC BY 4.0 License</a></p>
         </div>
     </div>
 </div>
@@ -133,9 +133,9 @@ def render_mermaid(diagram, descriptions):
             const tooltip = document.createElement('div');
             tooltip.className = 'tooltip';
             tooltip.innerHTML = `
-                <div style="background-color: #34495e; color: white; padding: 10px 15px; border-radius: 6px;">
-                    <h3>${{title}}</h3>
-                    <p>${{description}}</p>
+                <div style="background-color: #34495e; color: white; padding: 15px 20px; border-radius: 8px; font-size: 18px;">
+                    <h3 style="margin: 0 0 10px;">${{title}}</h3>
+                    <p style="margin: 0;">${{description}}</p>
                 </div>`;
             tooltip.style.position = 'fixed';
             tooltip.style.left = (event.pageX + 10) + 'px';
@@ -184,12 +184,12 @@ def render_mermaid(diagram, descriptions):
             position: fixed;
             background-color: #34495e;
             color: white;
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 15px 20px;
+            border-radius: 8px;
             box-shadow: 0 0 15px rgba(0,0,0,0.3);
             z-index: 1000;
-            max-width: 300px;
-            font-size: 14px;
+            max-width: 400px;
+            font-size: 18px;
             pointer-events: none;
             transition: all 0.2s ease;
             border: 1px solid #45566e;

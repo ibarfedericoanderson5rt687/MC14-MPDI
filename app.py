@@ -22,10 +22,10 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Título de la aplicación con ISO 5807:1985
+# Título de la aplicación con ISO 5807:1985 (Texto en negro)
 st.markdown("""
-<h1 style='text-align: center; color: white;'>Selecciona una metodología</h1>
-<p style='text-align: center; color: white; font-size: 18px;'>Los diagramas de flujo computacionales (Flowcharts) están basados en la norma <strong>ISO 5807:1985</strong>, que define las convenciones gráficas para representar procesos lógicos y estructuras de datos.</p>
+<h1 style='text-align: center; color: black;'>Selecciona una metodología</h1>
+<p style='text-align: center; color: black; font-size: 18px;'>Los diagramas de flujo computacionales (Flowcharts) están basados en la norma <strong>ISO 5807:1985</strong>, que define las convenciones gráficas para representar procesos lógicos y estructuras de datos.</p>
 """, unsafe_allow_html=True)
 
 # Botones personalizados para seleccionar metodología

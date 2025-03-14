@@ -39,7 +39,7 @@ flowchart TD
     H -->|📄 Documentación| I[/👤 Validación con Usuarios/]
     H -->|👎 No Aprobado ❌| J[[🔄 Revisión de Diseño]]
     J --> E
-    I --> K((🏭 🔩 Producción-Fabricación))
+    I --> K((โรงงาน 🔩 Producción-Fabricación))
     K --> L[(🚀 Lanzamiento)]
     L --> M([📢 👪 👤 Comunicación y Marketing Usuarios])
     M -->|Nuevas Mejoras| A

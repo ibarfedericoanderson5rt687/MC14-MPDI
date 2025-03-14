@@ -4,73 +4,53 @@ import streamlit.components.v1 as components
 # Configuración inicial de la página
 st.set_page_config(page_title="MC-14 y MPDI", layout="wide")
 
+# Información del autor (extraída del script 2)
+st.markdown("""
+<div style='background-color: #2D2D2D; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+    <h2>馃懁 Autor</h2>
+    <p>漏 2025 <strong>Ibar Federico Anderson, Ph.D., Master, Industrial Designer</strong></p>
+    <div style='display: flex; justify-content: space-between; margin-top: 10px;'>
+        <div>
+            <p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" style="height: 20px; vertical-align: middle;"> <a href="https://scholar.google.com/citations?user=mXD4RFUAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
+            <p><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" style="height: 20px; vertical-align: middle;"> <a href="https://orcid.org/0000-0002-9732-3660" target="_blank">ORCID</a></p>
+        </div>
+        <div>
+            <p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" style="height: 20px; vertical-align: middle;"> <a href="https://www.researchgate.net/profile/Ibar-Anderson" target="_blank">Research Gate</a></p>
+            <p><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 20px; vertical-align: middle;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 20px; vertical-align: middle;"> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0 License</a></p>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 # Título de la aplicación
 st.title("Selecciona una metodología")
 
-# Información para las ventanas emergentes
-info_mc14 = {
-    "🔍 Observación Curiosa": "Etapa 1: Identificación del fenómeno que despierta curiosidad.",
-    "❓ Planteamiento del Problema": "Etapa 2: Definición clara del problema a investigar.",
-    "📚 📖 Revisión de Literatura": "Etapa 3: Contextualización mediante la revisión de estudios previos.",
-    "💡 Hipótesis": "Etapa 4: Propuesta de una explicación predictiva basada en observaciones.",
-    "🔨 🔩 Diseño Experimental": "Etapa 5: Planificación de los métodos para probar la hipótesis.",
-    "📋 Recolección de Datos": "Etapa 6: Ejecución del experimento y recolección de datos.",
-    "📈 📊 Análisis de Datos": "Etapa 7: Interpretación estadística o cualitativa de los datos obtenidos.",
-    "✅ Conclusión": "Etapa 8: Evaluación de si los resultados apoyan la hipótesis.",
-    "📂 Redacción del Informe": "Etapa 9: Documentación formal de todo el proceso.",
-    "👨 👩 Revisión por Pares": "Etapa 10: Evaluación externa por expertos en el campo.",
-    "📂 📥 Publicación": "Etapa 11: Difusión de los resultados en revistas científicas.",
-    "♻️ Retroalimentación": "Etapa 12: Generación de nuevas preguntas o aplicaciones prácticas.",
-    "🏁 Fin": "Fin del proceso científico."
-}
-
-info_mpdi = {
-    "🏠 Empatizar y Contextualizar": "Etapa 1: Investigación de necesidades, contexto social y usuarios finales.",
-    "❓ Definir el Problema": "Etapa 2: Definición clara del problema de diseño industrial.",
-    "👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch": "Etapa 3: Análisis de tendencias, materiales y casos similares.",
-    "💡 ✨ Ideación y Conceptualización": "Etapa 4: Generación creativa de ideas con diversos métodos.",
-    "✏️ 📝 🎨 📐 Bocetos, Render 2D y Prototipos 3D": "Etapa 5: Creación de modelos básicos para explorar forma y función.",
-    "⚖️ 🔧 Evaluación Técnica": "Etapa 6: Análisis de viabilidad técnica, costos y usabilidad.",
-    "⚙️ Iteración y Refinamiento": "Etapa 7: Mejora basada en pruebas y retroalimentación.",
-    "📑 Documentación Técnica": "Etapa 8: Definición de especificaciones técnicas y planos.",
-    "👤 Validación con Usuarios": "Etapa 9: Pruebas en contextos reales con humanos para verificar funcionalidad, estética, ergonomía, precios, etc.",
-    "🏭 🔩 Producción y Fabricación": "Etapa 10: Implementación y lanzamiento al mercado.",
-    "📢 👪 👤 Comunicación y Marketing para Usuarios": "Etapa 11: Estrategias de comunicación y marketing para promover el producto.",
-    "🎯 Fin": "Fin del proceso de diseño industrial."
-}
-
-# Función para renderizar el diagrama Mermaid con ventanas emergentes
-def render_mermaid_with_tooltips(diagram, info):
-    # Crear ventanas emergentes para cada ícono
-    tooltip_html = ""
-    for icon, description in info.items():
-        tooltip_html += f"""
-        <div id="tooltip-{icon}" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc; z-index:1000;">
-            <h3>{icon}</h3>
-            <hr>
-            <p>{description}</p>
-            <button onclick="document.getElementById('tooltip-{icon}').style.display='none';">Cerrar</button>
-        </div>
-        """
-        # Reemplazar el ícono en el diagrama con un span clickeable
-        diagram = diagram.replace(icon, f'<span onclick="document.getElementById(\'tooltip-{icon}\').style.display=\'block\';">{icon}</span>')
-
-    # HTML completo con Mermaid y tooltips
-    mermaid_html = f"""
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <div class="mermaid" style="overflow: auto; max-height: 800px;">
-    {diagram}
-    </div>
-    <script>
-        mermaid.initialize({{ startOnLoad: true }});
-    </script>
-    {tooltip_html}
-    """
-    components.html(mermaid_html, height=800, scrolling=True)
-
-# Definir los diagramas Mermaid
+# Diagramas de flujo en Mermaid
 mc14_diagram = """
+%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'arial', 'fontSize': '16px' }}}%%
 flowchart TD
+    click A "Observación curiosa: identificación del fenómeno" _blank
+    click B "Planteamiento del problema: definición clara" _blank
+    click C "Revisión de literatura: contextualización" _blank
+    click D "Hipótesis: explicación predictiva" _blank
+    click E "Diseño experimental: planificación de métodos" _blank
+    click F "Recolección de datos: ejecución" _blank
+    click G "Análisis: interpretación estadística o cualitativa" _blank
+    click H "Conclusión: relación con la hipótesis" _blank
+    click I "Redacción del informe: documentación" _blank
+    click K "Revisión por pares: evaluación externa" _blank
+    click L "Publicación: difusión en revistas" _blank
+    click M "Retroalimentación: nuevas preguntas o aplicaciones" _blank
+
+    classDef default fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
+    classDef round fill:#e74c3c,stroke:#c0392b,color:white,cursor:pointer
+    classDef diamond fill:#2ecc71,stroke:#27ae60,color:white,cursor:pointer
+    classDef parallel fill:#9b59b6,stroke:#8e44ad,color:white,cursor:pointer
+    classDef circle fill:#f1c40f,stroke:#f39c12,color:white,cursor:pointer
+    classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
+
+    linkStyle default stroke:#ffffff,stroke-width:2px
+
     A([🔍 Observación Curiosa]) --> B[❓ Planteamiento del Problema]
     B --> C[/📚 📖 Revisión de Literatura/]
     C --> D{💡 Hipótesis}
@@ -86,10 +66,39 @@ flowchart TD
     L --> M([♻️ Retroalimentación])
     M -->|Nuevas Preguntas| A
     M -->|🏁 Fin del Proceso| N([🏁 Fin])
+
+    class A,F,M,N round
+    class D,H diamond
+    class G,J parallel
+    class K circle
+    class L database
 """
 
 mpdi_diagram = """
+%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'arial', 'fontSize': '16px' }}}%%
 flowchart TD
+    click A "Empatizar y contextualizar: Investigación de necesidades, contexto social y usuarios finales" _blank
+    click B "Definir el problema de diseño industrial" _blank
+    click C "Investigación y revisión de antecedentes: Análisis de tendencias, materiales y casos similares" _blank
+    click D "Ideación y conceptualización: Generación creativa de ideas con diversos métodos" _blank
+    click E "Bocetos y prototipado inicial: Creación de modelos básicos para explorar forma y función" _blank
+    click F "Evaluación técnica y ergonómica: Análisis de viabilidad técnica, costos y usabilidad" _blank
+    click G "Iteración y refinamiento: Mejora basada en pruebas y retroalimentación" _blank
+    click H "Desarrollo técnico y documentación: Definición de especificaciones técnicas y planos" _blank
+    click I "Validación con usuarios: Pruebas en contextos reales" _blank
+    click K "Preparación de la documentación para producción" _blank
+    click L "Implementación y lanzamiento: Producción y distribución al mercado" _blank
+    click M "Retroalimentación post-lanzamiento: Información extraída del marketing y las ventas" _blank
+
+    classDef default fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
+    classDef round fill:#e74c3c,stroke:#c0392b,color:white,cursor:pointer
+    classDef diamond fill:#2ecc71,stroke:#27ae60,color:white,cursor:pointer
+    classDef parallel fill:#9b59b6,stroke:#8e44ad,color:white,cursor:pointer
+    classDef circle fill:#f1c40f,stroke:#f39c12,color:white,cursor:pointer
+    classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
+
+    linkStyle default stroke:#ffffff,stroke-width:2px
+
     A([🏠 Empatizar y Contextualizar]) --> B[/❓ Definir el Problema/]
     B --> C[/👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch/]
     C --> D{💡 ✨ Ideación y Conceptualización}
@@ -105,18 +114,96 @@ flowchart TD
     L --> M([📢 👪 👤 Comunicación y Marketing para Usuarios])
     M -->|Nuevas Mejoras| A
     M -->|🎯 Fin del Proceso| N([🎯 Fin])
+
+    class A,F,M,N round
+    class D,H diamond
+    class G,J parallel
+    class K circle
+    class L database
 """
 
-# Botones para seleccionar la metodología
+def render_mermaid(diagram):
+    mermaid_html = f"""
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        function showTooltip(event, text) {{
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.innerHTML = text;
+            tooltip.style.left = (event.pageX + 10) + 'px';
+            tooltip.style.top = (event.pageY + 10) + 'px';
+            document.body.appendChild(tooltip);
+        }}
+
+        function hideTooltip() {{
+            const tooltips = document.querySelectorAll('.tooltip');
+            tooltips.forEach(t => t.remove());
+        }}
+
+        document.addEventListener('DOMContentLoaded', function() {{
+            setTimeout(() => {{
+                const nodes = document.querySelectorAll('.node');
+                nodes.forEach(node => {{
+                    node.style.cursor = 'pointer';
+                    node.addEventListener('mouseover', (e) => {{
+                        const text = node.getAttribute('title') || node.textContent;
+                        showTooltip(e, text);
+                    }});
+                    node.addEventListener('mouseout', hideTooltip);
+                }});
+            }}, 2000);
+        }});
+    </script>
+    <style>
+        body {{
+            background-color: #2c3e50;
+            color: white;
+        }}
+        .stApp {{
+            background-color: #2c3e50;
+        }}
+        .css-1d391kg {{
+            background-color: #2c3e50;
+        }}
+        .stSelectbox label {{
+            color: white !important;
+        }}
+        .mermaid {{
+            background-color: #2c3e50;
+        }}
+        .tooltip {{
+            position: fixed;
+            background-color: #34495e;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 300px;
+            font-size: 14px;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            border: 1px solid #45566e;
+        }}
+    </style>
+    <div class="mermaid" style="overflow: auto; max-height: 800px;">
+    {diagram}
+    </div>
+    <script>
+        mermaid.initialize({{ startOnLoad: true }});
+    </script>
+    """
+    components.html(mermaid_html, height=800, scrolling=True)
+
+# Selector de metodología
 option = st.selectbox(
     "Elige una metodología",
     ["MC-14: Método Científico", "MPDI: Diseño Industrial"]
 )
 
-# Mostrar el diagrama correspondiente
 if option == "MC-14: Método Científico":
     st.subheader("MC-14: Método Científico")
-    render_mermaid_with_tooltips(mc14_diagram, info_mc14)
+    render_mermaid(mc14_diagram)
 elif option == "MPDI: Diseño Industrial":
     st.subheader("MPDI: Diseño Industrial")
-    render_mermaid_with_tooltips(mpdi_diagram, info_mpdi)
+    render_mermaid(mpdi_diagram)

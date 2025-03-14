@@ -30,18 +30,18 @@ flowchart TD
 mpdi_diagram = """
 flowchart TD
     A([🏠 Empatizar y Contextualizar]) --> B[/❓ Definir el Problema/]
-    B --> C[/👨‍💻 💾 📲 🔗 Investigación Web, DeepSearch/]
+    B --> C[/👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch/]
     C --> D{💡 ✨ Ideación y Conceptualización}
-    D -->|Generación| E[✏️ 📝 🎨 📐 Bocetos, Render (2D) y Prototipos (3D)]
+    D -->|Generación| E[✏️ 📝 🎨 📐 Bocetos, Render 2D y Prototipos 3D]
     E --> F([⚖️ 🔧 Evaluación Técnica])
     F --> G[[⚙️ Iteración y Refinamiento]]
     G --> H{📑 Documentación Técnica}
     H -->|📄 Documentación| I[/👤 Validación con Usuarios/]
     H -->|👎 No Aprobado ❌| J[[🔄 Revisión de Diseño]]
     J --> E
-    I --> K((🏭 🔩 Producción-Fabricación))
+    I --> K((🏭 🔩 Producción y Fabricación))
     K --> L[(🚀 Lanzamiento)]
-    L --> M([📢 👪 👤 Comunicación y Marketing Usuarios])
+    L --> M([📢 👪 👤 Comunicación y Marketing para Usuarios])
     M -->|Nuevas Mejoras| A
     M -->|🎯 Fin del Proceso| N([🎯 Fin])
 """

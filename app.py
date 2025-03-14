@@ -39,7 +39,7 @@ flowchart TD
     H -->|📄 Documentación| I[/👤 Validación con Usuarios/]
     H -->|👎 No Aprobado ❌| J[[🔄 Revisión de Diseño]]
     J --> E
-    I --> K((โรงงาน 🔩 Producción-Fabricación))
+    I --> K((🏭 🔩 Producción-Fabricación))
     K --> L[(🚀 Lanzamiento)]
     L --> M([📢 👪 👤 Comunicación y Marketing Usuarios])
     M -->|Nuevas Mejoras| A
@@ -63,9 +63,10 @@ def render_mermaid(diagram):
 # Botones para seleccionar la metodología
 option = st.selectbox(
     "Elige una metodología",
-    ("MC-14: Método Científico", "MPDI: Diseño Industrial")
+    ["MC-14: Método Científico", "MPDI: Diseño Industrial"]  # Usamos una lista explícita
 )
 
+# Mostrar el diagrama correspondiente
 if option == "MC-14: Método Científico":
     st.subheader("MC-14: Método Científico")
     render_mermaid(mc14_diagram)

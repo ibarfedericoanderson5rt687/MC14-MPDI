@@ -53,19 +53,6 @@ flowchart TD
     classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
 
     linkStyle default stroke:#ffffff,stroke-width:2px
-
-    click A "Observación curiosa: identificación del fenómeno" _blank
-    click B "Planteamiento del problema: definición clara" _blank
-    click C "Revisión de literatura: contextualización" _blank
-    click D "Hipótesis: explicación predictiva" _blank
-    click E "Diseño experimental: planificación de métodos" _blank
-    click F "Recolección de datos: ejecución" _blank
-    click G "Análisis: interpretación estadística o cualitativa" _blank
-    click H "Conclusión: relación con la hipótesis" _blank
-    click I "Redacción del informe: documentación" _blank
-    click K "Revisión por pares: evaluación externa" _blank
-    click L "Publicación: difusión en revistas" _blank
-    click M "Retroalimentación: nuevas preguntas o aplicaciones" _blank
 """
 
 mpdi_diagram = """
@@ -95,19 +82,6 @@ flowchart TD
     classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
 
     linkStyle default stroke:#ffffff,stroke-width:2px
-
-    click A "Empatizar y contextualizar: Investigación de necesidades, contexto social y usuarios finales" _blank
-    click B "Definir el problema de diseño industrial" _blank
-    click C "Investigación y revisión de antecedentes: Análisis de tendencias, materiales y casos similares" _blank
-    click D "Ideación y conceptualización: Generación creativa de ideas con diversos métodos" _blank
-    click E "Bocetos y prototipado inicial: Creación de modelos básicos para explorar forma y función" _blank
-    click F "Evaluación técnica y ergonómica: Análisis de viabilidad técnica, costos y usabilidad" _blank
-    click G "Iteración y refinamiento: Mejora basada en pruebas y retroalimentación" _blank
-    click H "Desarrollo técnico y documentación: Definición de especificaciones técnicas y planos" _blank
-    click I "Validación con usuarios: Pruebas en contextos reales" _blank
-    click K "Preparación de la documentación para producción" _blank
-    click L "Implementación y lanzamiento: Producción y distribución al mercado" _blank
-    click M "Retroalimentación post-lanzamiento: Información extraída del marketing y las ventas" _blank
 """
 
 def render_mermaid(diagram):

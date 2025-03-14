@@ -22,36 +22,81 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Título de la aplicación
-st.title("Selecciona una metodología")
+# Título de la aplicación con ISO 5807:1985
+st.markdown("""
+<h1 style='text-align: center; color: white;'>Selecciona una metodología</h1>
+<p style='text-align: center; color: white; font-size: 18px;'>Los diagramas de flujo computacionales (Flowcharts) están basados en la norma <strong>ISO 5807:1985</strong>, que define las convenciones gráficas para representar procesos lógicos y estructuras de datos.</p>
+""", unsafe_allow_html=True)
 
-# Descripciones para MC-14
+# Descripciones ampliadas para MC-14
 mc14_descriptions = {
-    "🔍 Observación Curiosa": "Identificación del fenómeno mediante una observación curiosa.",
-    "❓ Planteamiento del Problema": "Definición clara del problema a investigar.",
-    "📚 📖 Revisión de Literatura": "Contextualización del problema mediante la revisión de literatura.",
-    "💡 Hipótesis": "Explicación predictiva que guía la investigación.",
-    "🔨 🔩 Diseño Experimental": "Planificación de métodos para abordar el problema.",
-    "📋 Recolección de Datos": "Ejecución de la recolección de datos.",
-    "📈 📊 Análisis de Datos": "Interpretación estadística o cualitativa de los datos.",
-    "✅ Conclusión": "Relación de los resultados con la hipótesis planteada.",
-    "📂 Redacción del Informe": "Documentación formal de la investigación.",
-    "👨 👩 Revisión por Pares": "Evaluación externa del informe por expertos.",
-    "📂 📥 Publicación": "Difusión de los resultados en revistas científicas.",
-    "♻️ Retroalimentación": "Generación de nuevas preguntas o aplicaciones.",
+    "🔍 Observación Curiosa": """
+        La observación curiosa es el punto de partida del método científico. Consiste en identificar fenómenos o patrones inusuales que despierten interés investigativo. Este paso implica estar atento a detalles que otros podrían pasar por alto.
+    """,
+    "❓ Planteamiento del Problema": """
+        El planteamiento del problema consiste en formular una pregunta clara y específica que guíe la investigación. Debe ser lo suficientemente precisa para permitir una solución práctica y relevante.
+    """,
+    "📚 📖 Revisión de Literatura": """
+        La revisión de literatura implica explorar estudios previos, teorías y datos existentes relacionados con el problema. Este paso ayuda a contextualizar el problema dentro del conocimiento actual y evitar duplicaciones innecesarias.
+    """,
+    "💡 Hipótesis": """
+        La hipótesis es una afirmación predictiva que intenta explicar el fenómeno observado. Debe ser comprobable mediante experimentos y debe proporcionar una base sólida para la investigación.
+    """,
+    "🔨 🔩 Diseño Experimental": """
+        El diseño experimental incluye la planificación de métodos, herramientas y procedimientos para recolectar datos de manera sistemática. Este paso asegura que los resultados sean válidos y reproducibles.
+    """,
+    "📋 Recolección de Datos": """
+        La recolección de datos implica ejecutar los métodos planificados para obtener información relevante. Este proceso debe ser riguroso y seguir protocolos establecidos para garantizar la calidad de los datos.
+    """,
+    "📈 📊 Análisis de Datos": """
+        El análisis de datos incluye la interpretación estadística o cualitativa de los datos recolectados. Este paso busca identificar patrones, tendencias o relaciones significativas que respalden o refuten la hipótesis.
+    """,
+    "✅ Conclusión": """
+        La conclusión evalúa si los resultados obtenidos apoyan la hipótesis inicial. Este paso también puede generar nuevas preguntas o ajustes en el marco teórico.
+    """,
+    "📂 Redacción del Informe": """
+        La redacción del informe documenta formalmente todo el proceso de investigación, incluyendo objetivos, métodos, resultados y conclusiones. Es esencial para la comunicación científica.
+    """,
+    "👨 👩 Revisión por Pares": """
+        La revisión por pares es un proceso crítico en el que expertos externos evalúan el informe para garantizar su rigor y validez. Este paso mejora la calidad y credibilidad del trabajo.
+    """,
+    "📂 📥 Publicación": """
+        La publicación difunde los resultados en revistas científicas o conferencias especializadas. Este paso permite que otros investigadores accedan y construyan sobre el trabajo realizado.
+    """,
+    "♻️ Retroalimentación": """
+        La retroalimentación genera nuevas preguntas, aplicaciones o mejoras en el proceso investigativo. Este ciclo continuo fomenta el avance del conocimiento científico.
+    """,
 }
 
-# Descripciones para MPDI
+# Descripciones ampliadas para MPDI
 mpdi_descriptions = {
-    "🏠 Empatizar y Contextualizar": "Investigación de necesidades, contexto social y usuarios finales.",
-    "❓ Definir el Problema": "Definición clara del problema de diseño industrial.",
-    "👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch": "Análisis de tendencias, materiales y casos similares.",
-    "💡 ✨ Ideación y Conceptualización": "Generación creativa de ideas con diversos métodos.",
-    "✏️ 📝 🎨 📐 Bocetos y Prototipado Inicial": "Creación de modelos básicos para explorar forma y función.",
-    "⚖️ 🔧 Evaluación Técnica": "Análisis de viabilidad técnica, costos y usabilidad.",
-    "⚙️ Iteración y Refinamiento": "Mejora basada en pruebas y retroalimentación.",
-    "📑 Documentación Técnica": "Definición de especificaciones técnicas y planos.",
-    "👤 Validación con Usuarios": "Pruebas en contextos reales con humanos para verificar funcionalidad, estética, ergonomía, precios, etc.",
+    "🏠 Empatizar y Contextualizar": """
+        La empatía implica comprender profundamente las necesidades, deseos y limitaciones de los usuarios finales. Este paso también incluye analizar el contexto social, cultural y ambiental donde se utilizará el producto.
+    """,
+    "❓ Definir el Problema": """
+        Definir el problema consiste en identificar claramente qué necesidad o desafío se intenta resolver. Este paso debe ser específico y centrarse en los usuarios y sus interacciones con el entorno.
+    """,
+    "👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch": """
+        La investigación web incluye buscar tendencias actuales, materiales innovadores y casos similares. Esta etapa utiliza herramientas digitales avanzadas para recopilar información relevante.
+    """,
+    "💡 ✨ Ideación y Conceptualización": """
+        La ideación es un proceso creativo que genera múltiples soluciones potenciales al problema. Se utilizan técnicas como brainstorming, mapas mentales y prototipado rápido para explorar ideas.
+    """,
+    "✏️ 📝 🎨 📐 Bocetos y Prototipado Inicial": """
+        Los bocetos y prototipos iniciales permiten visualizar y explorar formas, funciones y usabilidad. Este paso es clave para materializar ideas abstractas en conceptos tangibles.
+    """,
+    "⚖️ 🔧 Evaluación Técnica": """
+        La evaluación técnica analiza la viabilidad del diseño desde perspectivas técnicas, económicas y de usabilidad. Este paso asegura que el producto sea funcional, seguro y rentable.
+    """,
+    "⚙️ Iteración y Refinamiento": """
+        La iteración implica mejorar el diseño basado en pruebas y retroalimentación. Este proceso cíclico garantiza que el producto final sea óptimo y cumpla con las expectativas del usuario.
+    """,
+    "📑 Documentación Técnica": """
+        La documentación técnica incluye especificaciones detalladas, planos y manuales de uso. Este paso es esencial para la producción y mantenimiento del producto.
+    """,
+    "👤 Validación con Usuarios": """
+        La validación con usuarios prueba el producto en contextos reales para verificar su funcionalidad, estética, ergonomía y aceptación. Este paso asegura que el diseño satisfaga las necesidades del usuario.
+    """,
 }
 
 # Diagramas de flujo en Mermaid
@@ -135,7 +180,8 @@ def render_mermaid(diagram, descriptions):
             tooltip.innerHTML = `
                 <div style="background-color: #34495e; color: white; padding: 25px 30px; border-radius: 12px; font-size: 24px; line-height: 1.4;">
                     <h3 style="margin: 0 0 15px; font-size: 30px;">${{title}}</h3>
-                    <p style="margin: 0; font-size: 24px;">${{description}}</p>
+                    <hr style="border: 1px solid white; margin: 15px 0;">
+                    <p style="margin: 0; font-size: 24px;">${{description.trim()}}</p>
                 </div>`;
             tooltip.style.position = 'fixed';
             tooltip.style.left = (event.pageX + 10) + 'px';

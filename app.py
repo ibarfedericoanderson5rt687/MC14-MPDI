@@ -108,6 +108,15 @@ mpdi_descriptions = {
     "👤 Validación con Usuarios": """
         La validación con usuarios prueba el producto en contextos reales para verificar su funcionalidad, estética, ergonomía y aceptación. Este paso asegura que el diseño satisfaga las necesidades del usuario.
     """,
+    "🏭 🔩 Producción y Fabricación": """
+        La producción y fabricación consiste en la implementación del diseño en un entorno industrial. Este paso incluye la selección de materiales, herramientas y procesos para crear el producto final.
+    """,
+    "🚀 Lanzamiento": """
+        El lanzamiento implica la introducción del producto al mercado. Este paso incluye estrategias de marketing, distribución y soporte técnico para asegurar una adopción exitosa.
+    """,
+    "📢 👪 👤 Comunicación y Marketing para Usuarios": """
+        La comunicación y marketing para usuarios se enfoca en promover el producto y generar interés entre los consumidores. Este paso incluye campañas publicitarias, redes sociales y eventos.
+    """,
 }
 
 # Diagramas de flujo en Mermaid
@@ -159,7 +168,7 @@ flowchart TD
     H -->|📄 Documentación| I[/👤 Validación con Usuarios/]
     H -->|👎 No Aprobado ❌| J[[🔄 Revisión de Diseño]]
     J --> E
-    I --> K((🏭 🔩 Producción y Fabricación))
+    I --> K((_FACTORY 🔩 Producción y Fabricación))
     K --> L[(🚀 Lanzamiento)]
     L --> M([📢 👪 👤 Comunicación y Marketing para Usuarios])
     M -->|Nuevas Mejoras| A
@@ -189,10 +198,10 @@ def render_mermaid(diagram, descriptions):
             const tooltip = document.createElement('div');
             tooltip.className = 'tooltip';
             tooltip.innerHTML = `
-                <div style="background-color: #34495e; color: white; padding: 25px 30px; border-radius: 12px; font-size: 24px; line-height: 1.4;">
+                <div style="background-color: #34495e; color: white; padding: 30px; border-radius: 12px; font-size: 22px; line-height: 1.4; max-height: 400px; overflow-y: auto;">
                     <h3 style="margin: 0 0 15px; font-size: 30px;">${{title}}</h3>
                     <hr style="border: 1px solid white; margin: 15px 0;">
-                    <p style="margin: 0; font-size: 24px;">${{description.trim()}}</p>
+                    <p style="margin: 0; font-size: 22px;">${{description.trim()}}</p>
                 </div>`;
             tooltip.style.position = 'fixed';
             tooltip.style.left = (event.pageX + 10) + 'px';
@@ -241,16 +250,18 @@ def render_mermaid(diagram, descriptions):
             position: fixed;
             background-color: #34495e;
             color: white;
-            padding: 25px 30px;
+            padding: 30px;
             border-radius: 12px;
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
             z-index: 1000;
             max-width: 600px; /* Más ancho */
-            font-size: 24px; /* Fuente más grande */
+            font-size: 22px; /* Fuente más grande */
             line-height: 1.4; /* Espaciado entre líneas */
             pointer-events: none;
             transition: all 0.2s ease;
             border: 2px solid #45566e;
+            max-height: 400px; /* Altura máxima */
+            overflow-y: auto; /* Scroll vertical si es necesario */
         }}
     </style>
     <div class="mermaid" style="overflow: auto; max-height: 800px;">

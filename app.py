@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 # Configuración inicial de la página
 st.set_page_config(page_title="MC-14 y MPDI", layout="wide")
 
-# Información del autor (extraída del script 2)
+# Información del autor
 st.markdown("""
 <div style='background-color: #2D2D2D; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
     <h2>馃懁 Autor</h2>
@@ -29,28 +29,6 @@ st.title("Selecciona una metodología")
 mc14_diagram = """
 %%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'arial', 'fontSize': '16px' }}}%%
 flowchart TD
-    click A "Observación curiosa: identificación del fenómeno" _blank
-    click B "Planteamiento del problema: definición clara" _blank
-    click C "Revisión de literatura: contextualización" _blank
-    click D "Hipótesis: explicación predictiva" _blank
-    click E "Diseño experimental: planificación de métodos" _blank
-    click F "Recolección de datos: ejecución" _blank
-    click G "Análisis: interpretación estadística o cualitativa" _blank
-    click H "Conclusión: relación con la hipótesis" _blank
-    click I "Redacción del informe: documentación" _blank
-    click K "Revisión por pares: evaluación externa" _blank
-    click L "Publicación: difusión en revistas" _blank
-    click M "Retroalimentación: nuevas preguntas o aplicaciones" _blank
-
-    classDef default fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
-    classDef round fill:#e74c3c,stroke:#c0392b,color:white,cursor:pointer
-    classDef diamond fill:#2ecc71,stroke:#27ae60,color:white,cursor:pointer
-    classDef parallel fill:#9b59b6,stroke:#8e44ad,color:white,cursor:pointer
-    classDef circle fill:#f1c40f,stroke:#f39c12,color:white,cursor:pointer
-    classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
-
-    linkStyle default stroke:#ffffff,stroke-width:2px
-
     A([🔍 Observación Curiosa]) --> B[❓ Planteamiento del Problema]
     B --> C[/📚 📖 Revisión de Literatura/]
     C --> D{💡 Hipótesis}
@@ -67,29 +45,6 @@ flowchart TD
     M -->|Nuevas Preguntas| A
     M -->|🏁 Fin del Proceso| N([🏁 Fin])
 
-    class A,F,M,N round
-    class D,H diamond
-    class G,J parallel
-    class K circle
-    class L database
-"""
-
-mpdi_diagram = """
-%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'arial', 'fontSize': '16px' }}}%%
-flowchart TD
-    click A "Empatizar y contextualizar: Investigación de necesidades, contexto social y usuarios finales" _blank
-    click B "Definir el problema de diseño industrial" _blank
-    click C "Investigación y revisión de antecedentes: Análisis de tendencias, materiales y casos similares" _blank
-    click D "Ideación y conceptualización: Generación creativa de ideas con diversos métodos" _blank
-    click E "Bocetos y prototipado inicial: Creación de modelos básicos para explorar forma y función" _blank
-    click F "Evaluación técnica y ergonómica: Análisis de viabilidad técnica, costos y usabilidad" _blank
-    click G "Iteración y refinamiento: Mejora basada en pruebas y retroalimentación" _blank
-    click H "Desarrollo técnico y documentación: Definición de especificaciones técnicas y planos" _blank
-    click I "Validación con usuarios: Pruebas en contextos reales" _blank
-    click K "Preparación de la documentación para producción" _blank
-    click L "Implementación y lanzamiento: Producción y distribución al mercado" _blank
-    click M "Retroalimentación post-lanzamiento: Información extraída del marketing y las ventas" _blank
-
     classDef default fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
     classDef round fill:#e74c3c,stroke:#c0392b,color:white,cursor:pointer
     classDef diamond fill:#2ecc71,stroke:#27ae60,color:white,cursor:pointer
@@ -99,6 +54,23 @@ flowchart TD
 
     linkStyle default stroke:#ffffff,stroke-width:2px
 
+    click A "Observación curiosa: identificación del fenómeno" _blank
+    click B "Planteamiento del problema: definición clara" _blank
+    click C "Revisión de literatura: contextualización" _blank
+    click D "Hipótesis: explicación predictiva" _blank
+    click E "Diseño experimental: planificación de métodos" _blank
+    click F "Recolección de datos: ejecución" _blank
+    click G "Análisis: interpretación estadística o cualitativa" _blank
+    click H "Conclusión: relación con la hipótesis" _blank
+    click I "Redacción del informe: documentación" _blank
+    click K "Revisión por pares: evaluación externa" _blank
+    click L "Publicación: difusión en revistas" _blank
+    click M "Retroalimentación: nuevas preguntas o aplicaciones" _blank
+"""
+
+mpdi_diagram = """
+%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'arial', 'fontSize': '16px' }}}%%
+flowchart TD
     A([🏠 Empatizar y Contextualizar]) --> B[/❓ Definir el Problema/]
     B --> C[/👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch/]
     C --> D{💡 ✨ Ideación y Conceptualización}
@@ -115,21 +87,42 @@ flowchart TD
     M -->|Nuevas Mejoras| A
     M -->|🎯 Fin del Proceso| N([🎯 Fin])
 
-    class A,F,M,N round
-    class D,H diamond
-    class G,J parallel
-    class K circle
-    class L database
+    classDef default fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
+    classDef round fill:#e74c3c,stroke:#c0392b,color:white,cursor:pointer
+    classDef diamond fill:#2ecc71,stroke:#27ae60,color:white,cursor:pointer
+    classDef parallel fill:#9b59b6,stroke:#8e44ad,color:white,cursor:pointer
+    classDef circle fill:#f1c40f,stroke:#f39c12,color:white,cursor:pointer
+    classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
+
+    linkStyle default stroke:#ffffff,stroke-width:2px
+
+    click A "Empatizar y contextualizar: Investigación de necesidades, contexto social y usuarios finales" _blank
+    click B "Definir el problema de diseño industrial" _blank
+    click C "Investigación y revisión de antecedentes: Análisis de tendencias, materiales y casos similares" _blank
+    click D "Ideación y conceptualización: Generación creativa de ideas con diversos métodos" _blank
+    click E "Bocetos y prototipado inicial: Creación de modelos básicos para explorar forma y función" _blank
+    click F "Evaluación técnica y ergonómica: Análisis de viabilidad técnica, costos y usabilidad" _blank
+    click G "Iteración y refinamiento: Mejora basada en pruebas y retroalimentación" _blank
+    click H "Desarrollo técnico y documentación: Definición de especificaciones técnicas y planos" _blank
+    click I "Validación con usuarios: Pruebas en contextos reales" _blank
+    click K "Preparación de la documentación para producción" _blank
+    click L "Implementación y lanzamiento: Producción y distribución al mercado" _blank
+    click M "Retroalimentación post-lanzamiento: Información extraída del marketing y las ventas" _blank
 """
 
 def render_mermaid(diagram):
     mermaid_html = f"""
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
-        function showTooltip(event, text) {{
+        function showTooltip(event, node) {{
             const tooltip = document.createElement('div');
             tooltip.className = 'tooltip';
-            tooltip.innerHTML = text;
+            tooltip.innerHTML = `
+                <div style="background-color: #34495e; color: white; padding: 10px 15px; border-radius: 6px;">
+                    <h3>${{node.title}}</h3>
+                    <p>${{node.description}}</p>
+                </div>`;
+            tooltip.style.position = 'fixed';
             tooltip.style.left = (event.pageX + 10) + 'px';
             tooltip.style.top = (event.pageY + 10) + 'px';
             document.body.appendChild(tooltip);
@@ -145,9 +138,10 @@ def render_mermaid(diagram):
                 const nodes = document.querySelectorAll('.node');
                 nodes.forEach(node => {{
                     node.style.cursor = 'pointer';
-                    node.addEventListener('mouseover', (e) => {{
-                        const text = node.getAttribute('title') || node.textContent;
-                        showTooltip(e, text);
+                    node.addEventListener('click', (e) => {{
+                        const title = node.getAttribute('data-title') || node.textContent;
+                        const description = node.getAttribute('data-description') || '';
+                        showTooltip(e, {{ title, description }});
                     }});
                     node.addEventListener('mouseout', hideTooltip);
                 }});
@@ -207,3 +201,7 @@ if option == "MC-14: Método Científico":
 elif option == "MPDI: Diseño Industrial":
     st.subheader("MPDI: Diseño Industrial")
     render_mermaid(mpdi_diagram)
+
+# Pie de página
+st.markdown("---")
+st.markdown("Desarrollado por Ibar Federico Anderson © 2025")

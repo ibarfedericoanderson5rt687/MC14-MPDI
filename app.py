@@ -49,10 +49,10 @@ st.markdown(
 # Título de la aplicación
 st.title("Selecciona una metodología")
 
-# Definir los diagramas Mermaid con colores personalizados
+# Definir los diagramas Mermaid con colores inline
 mc14_diagram = """
 flowchart TD
-    %% Colores para MC-14
+    %% Colores inline para MC-14
     A([🔍 Observación Curiosa]):::obs --> B[❓ Planteamiento del Problema]:::problem
     B --> C[/📚 📖 Revisión de Literatura/]:::review
     C --> D{💡 Hipótesis}:::hypothesis
@@ -88,7 +88,7 @@ flowchart TD
 
 mpdi_diagram = """
 flowchart TD
-    %% Colores para MPDI
+    %% Colores inline para MPDI
     A([🏠 Empatizar y Contextualizar]):::context --> B[/❓ Definir el Problema/]:::problem
     B --> C[/👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch/]:::research
     C --> D{💡 ✨ Ideación y Conceptualización}:::ideation

@@ -41,15 +41,6 @@ info_mpdi = {
 
 # Función para renderizar el diagrama Mermaid con ventanas emergentes
 def render_mermaid_with_tooltips(diagram, info):
-    mermaid_html = f"""
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <div class="mermaid" style="overflow: auto; max-height: 800px;">
-    {diagram}
-    </div>
-    <script>
-        mermaid.initialize({{ startOnLoad: true }});
-    </script>
-    """
     # Crear ventanas emergentes para cada ícono
     tooltip_html = ""
     for icon, description in info.items():
@@ -61,10 +52,20 @@ def render_mermaid_with_tooltips(diagram, info):
             <button onclick="document.getElementById('tooltip-{icon}').style.display='none';">Cerrar</button>
         </div>
         """
-        mermaid_html = mermaid_html.replace(icon, f'<span onclick="document.getElementById(\'tooltip-{icon}\').style.display=\'block\';">{icon}</span>')
+        # Reemplazar el ícono en el diagrama con un span clickeable
+        diagram = diagram.replace(icon, f'<span onclick="document.getElementById(\'tooltip-{icon}\').style.display=\'block\';">{icon}</span>')
 
-    # Añadir tooltips al HTML
-    mermaid_html += tooltip_html
+    # HTML completo con Mermaid y tooltips
+    mermaid_html = f"""
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <div class="mermaid" style="overflow: auto; max-height: 800px;">
+    {diagram}
+    </div>
+    <script>
+        mermaid.initialize({{ startOnLoad: true }});
+    </script>
+    {tooltip_html}
+    """
     components.html(mermaid_html, height=800, scrolling=True)
 
 # Definir los diagramas Mermaid

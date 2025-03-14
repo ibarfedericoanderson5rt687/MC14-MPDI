@@ -28,6 +28,17 @@ st.markdown("""
 <p style='text-align: center; color: white; font-size: 18px;'>Los diagramas de flujo computacionales (Flowcharts) están basados en la norma <strong>ISO 5807:1985</strong>, que define las convenciones gráficas para representar procesos lógicos y estructuras de datos.</p>
 """, unsafe_allow_html=True)
 
+# Botones personalizados para seleccionar metodología
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("MC-14: Método Científico", key="mc14_button", help="Selecciona esta opción para ver el flujo del Método Científico"):
+        st.session_state["selected_option"] = "MC-14: Método Científico"
+
+with col2:
+    if st.button("MPDI: Diseño Industrial", key="mpdi_button", help="Selecciona esta opción para ver el flujo del Diseño Industrial"):
+        st.session_state["selected_option"] = "MPDI: Diseño Industrial"
+
 # Descripciones ampliadas para MC-14
 mc14_descriptions = {
     "🔍 Observación Curiosa": """
@@ -251,18 +262,16 @@ def render_mermaid(diagram, descriptions):
     """
     components.html(mermaid_html, height=800, scrolling=True)
 
-# Selector de metodología
-option = st.selectbox(
-    "Elige una metodología",
-    ["MC-14: Método Científico", "MPDI: Diseño Industrial"]
-)
+# Mostrar el diagrama según la selección
+if "selected_option" in st.session_state:
+    option = st.session_state["selected_option"]
 
-if option == "MC-14: Método Científico":
-    st.subheader("MC-14: Método Científico")
-    render_mermaid(mc14_diagram, mc14_descriptions)
-elif option == "MPDI: Diseño Industrial":
-    st.subheader("MPDI: Diseño Industrial")
-    render_mermaid(mpdi_diagram, mpdi_descriptions)
+    if option == "MC-14: Método Científico":
+        st.subheader("MC-14: Método Científico")
+        render_mermaid(mc14_diagram, mc14_descriptions)
+    elif option == "MPDI: Diseño Industrial":
+        st.subheader("MPDI: Diseño Industrial")
+        render_mermaid(mpdi_diagram, mpdi_descriptions)
 
 # Pie de página
 st.markdown("---")

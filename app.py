@@ -53,21 +53,21 @@ st.title("Selecciona una metodología")
 mc14_diagram = """
 flowchart TD
     %% Colores para MC-14
-    A([Observación]):::obs --> B[Problema]:::problem
-    B --> C[Revisión]:::review
-    C --> D{Hipótesis}:::hypothesis
-    D -->|Formulación| E[Diseño]:::design
-    E --> F[Datos]:::data
-    F --> G[[Análisis]]:::analysis
-    G --> H{Conclusión}:::conclusion
-    H -->|Apoya| I[Informe]:::report
-    H -->|No Apoya| J[[Revisión]]:::revision
+    A([🔍 Observación Curiosa]):::obs --> B[❓ Planteamiento del Problema]:::problem
+    B --> C[/📚 📖 Revisión de Literatura/]:::review
+    C --> D{💡 Hipótesis}:::hypothesis
+    D -->|Formulación| E[🔨 🔩 Diseño Experimental]:::design
+    E --> F([📋 Recolección de Datos]):::data
+    F --> G[[📈 📊 Análisis de Datos]]:::analysis
+    G --> H{ ✅ Conclusión}:::conclusion
+    H -->|👍 Apoya Hipótesis| I[/📂 Redacción del Informe/]:::report
+    H -->|👎 ❌ No Apoya| J[[📌 Revisión de Hipótesis]]:::revision
     J --> E
-    I --> K((Pares)):::peer
-    K --> L[(Publicación)]:::publication
-    L --> M[Retroalimentación]:::feedback
+    I --> K((👨 👩 Revisión por Pares)):::peer
+    K --> L[(📂 📥 Publicación)]:::publication
+    L --> M([♻️ Retroalimentación]):::feedback
     M -->|Nuevas Preguntas| A
-    M -->|Fin| N([Fin]):::end
+    M -->|🏁 Fin del Proceso| N([🏁 Fin]):::end
 
     %% Clases para colores
     classDef obs fill:#1abc9c,stroke:#16a085,color:#fff
@@ -89,21 +89,21 @@ flowchart TD
 mpdi_diagram = """
 flowchart TD
     %% Colores para MPDI
-    A([Empatizar]):::context --> B[Problema]:::problem
-    B --> C[Investigación]:::research
-    C --> D{Ideación}:::ideation
-    D -->|Generación| E[Prototipos]:::prototyping
-    E --> F[Evaluación]:::evaluation
-    F --> G[[Iteración]]:::iteration
-    G --> H{Documentación}:::documentation
-    H -->|Validación| I[Usuarios]:::validation
-    H -->|Rediseño| J[[Revisión]]:::redesign
+    A([🏠 Empatizar y Contextualizar]):::context --> B[/❓ Definir el Problema/]:::problem
+    B --> C[/👨‍💻 💾 📲 🔗 Investigación Web y DeepSearch/]:::research
+    C --> D{💡 ✨ Ideación y Conceptualización}:::ideation
+    D -->|Generación| E[✏️ 📝 🎨 📐 Bocetos, Render 2D y Prototipos 3D]:::prototyping
+    E --> F([⚖️ 🔧 Evaluación Técnica]):::evaluation
+    F --> G[[⚙️ Iteración y Refinamiento]]:::iteration
+    G --> H{📑 Documentación Técnica}:::documentation
+    H -->|📄 Documentación| I[/👤 Validación con Usuarios/]:::validation
+    H -->|👎 No Aprobado ❌| J[[🔄 Revisión de Diseño]]:::redesign
     J --> E
-    I --> K((Producción)):::production
-    K --> L[(Lanzamiento)]:::launch
-    L --> M[Marketing]:::marketing
-    M -->|Mejoras| A
-    M -->|Fin| N([Fin]):::end
+    I --> K((🏭 🔩 Producción y Fabricación)):::production
+    K --> L[(🚀 Lanzamiento)]:::launch
+    L --> M([📢 👪 👤 Comunicación y Marketing para Usuarios]):::marketing
+    M -->|Nuevas Mejoras| A
+    M -->|🎯 Fin del Proceso| N([🎯 Fin]):::end
 
     %% Clases para colores
     classDef context fill:#1abc9c,stroke:#16a085,color:#fff

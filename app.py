@@ -82,6 +82,12 @@ flowchart TD
     classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
 
     linkStyle default stroke:#ffffff,stroke-width:2px
+
+    class A,F,M,N round
+    class D,H diamond
+    class G,J parallel
+    class K circle
+    class L database
 """
 
 mpdi_diagram = """
@@ -111,6 +117,12 @@ flowchart TD
     classDef database fill:#1abc9c,stroke:#16a085,color:white,cursor:pointer
 
     linkStyle default stroke:#ffffff,stroke-width:2px
+
+    class A,F,M,N round
+    class D,H diamond
+    class G,J parallel
+    class K circle
+    class L database
 """
 
 def render_mermaid(diagram, descriptions):

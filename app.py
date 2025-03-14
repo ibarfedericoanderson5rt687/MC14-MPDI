@@ -50,14 +50,15 @@ flowchart TD
 def render_mermaid(diagram):
     mermaid_html = f"""
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <div class="mermaid">
+    <div class="mermaid" style="overflow: auto; max-height: 800px;">
     {diagram}
     </div>
     <script>
         mermaid.initialize({{ startOnLoad: true }});
     </script>
     """
-    components.html(mermaid_html, height=600)
+    # Aumentamos la altura del componente HTML
+    components.html(mermaid_html, height=800, scrolling=True)
 
 # Botones para seleccionar la metodología
 option = st.selectbox(

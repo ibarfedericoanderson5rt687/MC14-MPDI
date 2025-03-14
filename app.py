@@ -133,9 +133,9 @@ def render_mermaid(diagram, descriptions):
             const tooltip = document.createElement('div');
             tooltip.className = 'tooltip';
             tooltip.innerHTML = `
-                <div style="background-color: #34495e; color: white; padding: 15px 20px; border-radius: 8px; font-size: 18px;">
-                    <h3 style="margin: 0 0 10px;">${{title}}</h3>
-                    <p style="margin: 0;">${{description}}</p>
+                <div style="background-color: #34495e; color: white; padding: 25px 30px; border-radius: 12px; font-size: 24px; line-height: 1.4;">
+                    <h3 style="margin: 0 0 15px; font-size: 30px;">${{title}}</h3>
+                    <p style="margin: 0; font-size: 24px;">${{description}}</p>
                 </div>`;
             tooltip.style.position = 'fixed';
             tooltip.style.left = (event.pageX + 10) + 'px';
@@ -184,15 +184,16 @@ def render_mermaid(diagram, descriptions):
             position: fixed;
             background-color: #34495e;
             color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
             z-index: 1000;
-            max-width: 400px;
-            font-size: 18px;
+            max-width: 600px; /* Más ancho */
+            font-size: 24px; /* Fuente más grande */
+            line-height: 1.4; /* Espaciado entre líneas */
             pointer-events: none;
             transition: all 0.2s ease;
-            border: 1px solid #45566e;
+            border: 2px solid #45566e;
         }}
     </style>
     <div class="mermaid" style="overflow: auto; max-height: 800px;">
